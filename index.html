@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Proccessing Album</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center><h3>IMAGE GALLERY</h3></center>
+
+        <div class="album">
+            <img src="1.jpg">
+            <img src="5.jpg">
+            <img src="6.jpg">
+            <img src="7.jpg">
+        </div><br><br><br>
+        <div class="album">
+            <img src="8.jpg">
+            <img src="11.jpg">
+            <img src="14.jpg">
+            <img src="15.jpg">
+        </div>
+    
+    </div>
+
+    <script>
+            // Get all the images
+      const images = document.querySelectorAll('.album img');
+
+      // Attach event listeners to each image
+      images.forEach((image) => {
+        image.addEventListener('mouseover', function() {
+          // Get the source of the current image
+          const imageSrc = this.src;
+
+          // Set the background image of the body element to the current image
+          document.body.style.backgroundImage = `url(${imageSrc})`;
+          document.body.style.backgroundSize = 'cover'; // Adjust background size to cover the entire body
+        });
+
+        image.addEventListener('mouseout', function() {
+          // Reset the background image of the body element
+          document.body.style.backgroundImage = 'none';
+        });
+      });
+
+
+
+    </script>
+    
+
+
+    
+</body>
+</html>
